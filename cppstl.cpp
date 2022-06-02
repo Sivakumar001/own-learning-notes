@@ -212,4 +212,42 @@ int main()
     for(auto itr=unset.begin(); itr!=unset.end();itr++){
         LOG(*itr);
     }
+
+    LOG("*****Map*******");
+
+    map<int, string> user;
+    user[10] = "siva";
+    user[21] = "kumar";
+    user[3] = "sundar";
+    user[4] = "keerthi";
+
+    user.insert({56,"bheem"});
+    user.erase(10);
+    for(std::pair<int, string> i: user){
+        LOG(i.second);
+    }
+    for(auto itr=user.find(3); itr!=user.end();itr++){
+        LOG((*itr).first);
+    }
+
+    unordered_map<int, string> umap;
+    umap[12] = "senthil";
+    umap[34] = "rajini";
+    umap[85] = "chandramuki";
+
+    for(auto i=umap.begin(); i!=umap.end(); i++){
+        LOG((*i).first);
+    }
+
+    LOG("****ALGORITHMS*****");
+    /* Algorithms
+    */
+
+    vector<int> alvct = {1,4,2,3,7,89,54,11,34};
+
+    sort(alvct.begin(), alvct.end()); //sorts the array
+    
+    LOG(binary_search(alvct.begin(), alvct.end(), 11)); //binary search
+
+    LOG(*(lower_bound(alvct.begin(), alvct.end(), 3)));
 }
