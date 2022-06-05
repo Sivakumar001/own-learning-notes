@@ -250,4 +250,6 @@ int main()
     LOG(binary_search(alvct.begin(), alvct.end(), 11)); //binary search
 
     LOG(*(lower_bound(alvct.begin(), alvct.end(), 3)));
+
+
 }
