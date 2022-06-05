@@ -251,5 +251,5 @@ int main()
 
     LOG(*(lower_bound(alvct.begin(), alvct.end(), 3)));
 
-
+    LOG(typeid(begin(alvct)).name());
 }
