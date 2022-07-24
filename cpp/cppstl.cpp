@@ -214,7 +214,11 @@ int main()
     }
 
     LOG("*****Map*******");
-
+    /*
+    Map or Dictionary
+    uses key value pair for storing values
+    Powerful for interviews
+    */
     map<int, string> user;
     user[10] = "siva";
     user[21] = "kumar";

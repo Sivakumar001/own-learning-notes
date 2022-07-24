@@ -1,33 +1,43 @@
 package java17;
 
-import java.time.*;
-import java.math.BigDecimal;
+import java.util.Random;
 
-public class Javabasics {
+
+interface Interfaces{
+    void howAreYou();
+}
+
+public class Javabasics implements Interfaces{
 
     int id;
     float height;
     double speed;
     String name;
-    BigDecimal phonenumber;
 
-    public void sample(String[] args){
+    public static void sample(String[] args){
         for(String a : args){
             System.out.println(a);
         }
-    }   
-    LocalDateTime t = LocalDateTime.now();
-
-    public static void main(String[] args) {
-        // Javabasics j = new Javabasics();
-        // j.id = 32;
-        // j.height = (float) 345.32;
-        // j.speed = 8452.2345;
-        // j.name = "RANDOm user";
-        // j.sample(new String[] {"hi", "bye", "sk"});
-        // System.out.println(j.t);
-        // System.out.println(j.name);
-
-        System.out.println("Hello world");
+        Random random = new Random();
+        
+        while(true){
+            System.out.println("Hey");
+            if(random.nextBoolean()){
+                break;
+            }
+        }
     }
+    
+    public static void main(String[] args) {
+        Javabasics jb = new Javabasics();
+        sample(new String[] {"Hi", "how", "are", "ya"});
+        jb.howAreYou();
+    }
+
+    @Override
+    public void howAreYou() {
+        System.out.println("How DO You Do");
+    }
+
+    
 }
