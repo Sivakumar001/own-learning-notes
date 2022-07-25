@@ -5,27 +5,7 @@ using namespace std;
 
 int main()
 {
-    /* Array
-    it is similar to normal declaration but convenient in access/copy
-    can be passed in function by value
-    can use for iterator based calculation below
-    */
-    array<int, 5> supra_int;
-
-    for (int i = 0; i < 5; i++)
-    {
-        supra_int[i] = i;
-    }
-    LOG(supra_int.size());
-    LOG(supra_int.at(3));   // 3
-    LOG(supra_int.empty()); // false
-    LOG(supra_int.front()); // 0
-    LOG(supra_int.back());  // 4
-
-    for (int *i = supra_int.begin(); i != supra_int.end(); i++)
-    {
-        LOG(*i);
-    }
+    
     LOG("***vector****")
 
     /* Vector

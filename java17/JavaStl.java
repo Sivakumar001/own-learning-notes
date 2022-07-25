@@ -2,11 +2,13 @@ package java17;
 
 import java.util.ArrayDeque;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.Comparator;
-import java.util.HashSet;
-import java.util.LinkedHashSet;
+import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
 import java.util.PriorityQueue;
 import java.util.Queue;
 import java.util.Set;
@@ -118,9 +120,43 @@ public class JavaStl {
         System.out.println(sampleSet);
     }
 
-    
+    /*
+     * Map (Dictionary)
+     * Map , HashMap, TreeMap
+     * Stores in key, value pairs
+     */
+    public static void mapConcept(){
+        Map<Integer, String> studentName = new HashMap<>();
+        studentName.put(1,"sk");
+        studentName.put(2,"kumar");
+        studentName.put(1,"siva");
+        System.out.println(studentName);
+        for(Map.Entry<Integer, String> entry : studentName.entrySet()){
+            System.out.println(entry);
+            System.out.println(
+            entry.getKey()+
+            entry.getValue());
+        }
+    }
+    /*
+     * Arrays class contain normal primitive array wrapper class
+     * contains binary search, min, max algorithms for arrays
+     * 
+     */
+    public static void arraysConcept(){
+        int[] a = {1,2,3,4,5,6,7,8,9};
+        int index = Arrays.binarySearch(a, 12);
+        System.out.println(index);
+        Arrays.sort(a);
+    }
 
-
+    /*
+     * Collections class consist similar but for other data structure
+     * queue, stack, linkedlist, hashmap
+     */
+    public static void collectionConcept(){
+        Collections.emptyIterator();
+    }
     public static void main(String[] args) {
         // arrayConcept();
         // stackConcept();
@@ -128,6 +164,8 @@ public class JavaStl {
         // priorityQueueConcept();
         // arrayDequeConcept();
         // setConcept();
+        // mapConcept();
+        arraysConcept();
     }
     
 
