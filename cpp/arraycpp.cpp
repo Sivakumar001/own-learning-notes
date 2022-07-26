@@ -10,6 +10,7 @@ void array_function(){
     for(int i=0; i<10; i++){
         sampleArray[i] = i;
     }
+    
     int sizeOfArray = sampleArray.size();
     LOG(sizeOfArray);
     int atPosTwo = sampleArray.at(2);

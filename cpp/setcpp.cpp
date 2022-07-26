@@ -21,7 +21,23 @@ void set_concept(){
     }
 }
 
+void unordered_set_concept(){
+    std::unordered_set<int> sample_unordered_set;
+    sample_unordered_set.insert(10);
+    sample_unordered_set.insert(1);
+    sample_unordered_set.insert(3);
+    sample_unordered_set.insert(3);
+
+    for(auto it: sample_unordered_set){
+        LOG(it);
+    }
+
+    std::string x = (sample_unordered_set.count(10)>0)? "Hi": "Bye";
+    LOG(x);
+}
+
 int main(){
     set_concept();
+    unordered_set_concept();
     return 0;
 }
