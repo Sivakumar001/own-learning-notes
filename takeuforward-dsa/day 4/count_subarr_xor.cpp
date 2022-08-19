@@ -1,4 +1,7 @@
-#include<bits/stdc++.h>
+#include<vector>
+#include<unordered_map>
+#include<iostream>
+
 using namespace std;
 
 int count_subarr_xor_k(vector<int> &nums, int target){

@@ -11,7 +11,7 @@ int longest_subarr_sum(vector<int> &arr){
         }
         else{
             if(un_map.find(sum)!=un_map.end()){
-                max_sum = max(max_sum, i-un_map[sum]);
+                max_sum = max(max_sum, i-(un_map[sum]+1)+1);
             }else{
                 un_map[sum]=i;
             }
