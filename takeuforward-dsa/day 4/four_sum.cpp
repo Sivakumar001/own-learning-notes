@@ -1,5 +1,6 @@
 #include<bits/stdc++.h>
 using namespace std;
+// two for loops and binary search the target to find foursum
 
 vector<vector<int>> four_sum(vector<int> &arr, int target){
     vector<vector<int>> ans;

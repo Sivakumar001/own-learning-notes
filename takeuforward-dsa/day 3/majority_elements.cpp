@@ -1,6 +1,8 @@
 #include<bits/stdc++.h>
 using namespace std;
 
+// same majority element but 2 values
+
 bool isMajority(vector<int> arr, int val1, int val2){
     int count1 = 0, count2=0;
     for(auto it: arr){

@@ -1,16 +1,20 @@
 #include<bits/stdc++.h>
 using namespace std;
 
+// find the total number of values which satify conditons i<j, arr[i]>2*arr[j]
+// mergesort can be used in this case
+
 void merge_(vector<int>& arr, int low, int mid, int high, int &count){
     vector<int> temp;
     int i=low, j=mid+1;
-
+    // condition
     for(int i=low;i<=mid;i++){
         while(j<=high && arr[i]>2LL*arr[j]){
             j++;
         }
         count += j-(mid+1);
     }
+    // end
     j=mid+1;
 
     while(i<=mid && j<=high){

@@ -1,6 +1,7 @@
 #include<bits/stdc++.h>
 using namespace std;
-
+// use first row and column as store space
+// create a boolean to store the value of column to avoid intersection of first element
 
 void set_matrices(vector<vector<int>> &given_matrix){
     bool flag = false;

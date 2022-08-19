@@ -1,6 +1,9 @@
 #include<bits/stdc++.h>
 using namespace std;
 
+// find the path by recursion when it reaches end return 1 which is found path
+// add that 1 on recursion to get final number of paths
+
 // DP and recursion
 int unique_path(int m, int n, vector<vector<int>> &dp, int i, int j){
     if(i>=m || j>=n){return 0;}

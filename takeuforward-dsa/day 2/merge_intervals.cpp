@@ -1,6 +1,9 @@
 #include<bits/stdc++.h>
 using namespace std;
 
+// if first of new vct less than last vct then merge
+// else put it as second pos in number table
+
 vector<vector<int>> merge_intervals(vector<vector<int>> &intervals){
     vector<vector<int>> ans;
     if(intervals.size()==0){return ans;}

@@ -1,6 +1,9 @@
 #include<bits/stdc++.h>
 using namespace std;
 
+// use moore voting algo given that if max exists 
+// by pigeon hole principle there must be one element which is max
+// in worst case we can use another loop to find whether the given value is max or not
 
 bool isMajority(vector<int> arr, int target, int k){
     int count = 0;

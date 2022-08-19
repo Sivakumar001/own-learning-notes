@@ -1,5 +1,7 @@
 #include<bits/stdc++.h>
 using namespace std;
+// dutch national flag algorithm
+// two pointer approach
 
 void sort012(vector<int> &nums){
     if(nums.size()==1){return;}

@@ -1,6 +1,10 @@
 #include<bits/stdc++.h>
 using namespace std;
 
+// kind of a mathematical problem
+// Sn = n(n+1)/2
+// S2n = n(2n+1)(n+1)/6
+
 pair<int, int> missing_and_repeating(vector<int> &A){
     long long int len = A.size();
 

@@ -1,6 +1,10 @@
 #include<bits/stdc++.h>
 using namespace std;
 
+// to rotate a matrix transpose the matrix
+// and reverse the rows
+// you rotated by 90deg
+
 void rotate_matrix(vector<vector<int>> &nums){
     //transpose
     int n=nums.size();
@@ -10,6 +14,7 @@ void rotate_matrix(vector<vector<int>> &nums){
             swap(nums[i][j], nums[j][i]);
         }
     }
+    // reverse rows
     for(int i=0;i<n;i++){
         reverse(nums[i].begin(), nums[i].end());
     }

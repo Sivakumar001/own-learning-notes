@@ -1,6 +1,9 @@
 #include<bits/stdc++.h>
 using namespace std;
 
+
+// classic merge sort algorithm
+
 void merge(vector<int> &arr, int start, int end){
     int mid = (start+end)/2;
     int len1 = mid - start + 1;

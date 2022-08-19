@@ -1,5 +1,8 @@
 #include<bits/stdc++.h>
 using namespace std;
+// using hashmap for the soln
+// if target-arrind exist in hashmap return thats the pair
+// sort and binary search (2nd method)
 
 vector<int> two_sum(vector<int> arr, int target){
     unordered_map<int,int> sum_map;

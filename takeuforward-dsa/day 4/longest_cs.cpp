@@ -1,6 +1,13 @@
 #include<bits/stdc++.h>
 using namespace std;
 
+// based on finding first number
+// create a set of question
+// find the first iteration in the vct from set 
+// from that find max value
+// 100->
+// 200->
+// 1->2->3->4->
 int longest_consecutive_sequence(vector<int> &nums){
     set<int> numSet(nums.begin(), nums.end());
     int lcs=0;

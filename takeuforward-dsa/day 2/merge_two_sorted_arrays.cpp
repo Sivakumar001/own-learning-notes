@@ -1,6 +1,8 @@
 #include<bits/stdc++.h>
 using namespace std;
 
+// merge function in mergesort algorithm
+
 void merge_two_sorted_arrays(vector<int> &A, vector<int>&B){
     int m=A.size(), n=A.size()+B.size();
     double gap = n;

@@ -1,6 +1,9 @@
 #include<bits/stdc++.h>
 using namespace std;
 
+// using mergesort to find the count value
+// count equals left end - curr pos in left
+
 int merge_arr(vector<int> arr, vector<int> temp, int low, int mid, int high){
     int count = 0;
     int i=low, j=mid, k=low;
