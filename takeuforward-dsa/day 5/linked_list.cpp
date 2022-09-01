@@ -8,11 +8,11 @@ class Node{
         Node(int x):value(x),next(nullptr){};
 };
 
-class llinked_list{
+class linked_list{
     public:
         Node* head;
         int size;
-        llinked_list():head(nullptr),size(0){};
+        linked_list():head(nullptr),size(0){};
 
         void addAtHead(int value){addAtIndex(0, value);}
         void addAtTail(int value){addAtIndex(size, value);}
@@ -54,7 +54,7 @@ class llinked_list{
         void printAll(){
             Node *current = head;
             while(current!=nullptr){
-                cout << current->value;
+                cout << current->value << "-> ";
                 current = current->next;
             }
         }
@@ -74,7 +74,7 @@ class llinked_list{
             }
             size--;
         }
-        ~llinked_list(){
+        ~linked_list(){
             Node *ptr = head;
             while(head!=nullptr){
                 head=head->next;
@@ -85,16 +85,16 @@ class llinked_list{
 
 };
 
-int main(){
-    llinked_list l;
-    l.addAtHead(1);
-    l.addAtTail(2);
-    l.addAtTail(3);
-    l.addAtTail(4);
-    l.addAtTail(5);
-    l.addAtTail(6);
-    l.deleteAtIndex(5);
-    l.printAll();
-    cout << l.getAtTail();
-    return 0;
-}
+// int main(){
+//     linked_list l;
+//     l.addAtHead(1);
+//     l.addAtTail(2);
+//     l.addAtTail(3);
+//     l.addAtTail(4);
+//     l.addAtTail(5);
+//     l.addAtTail(6);
+//     l.deleteAtIndex(5);
+//     l.printAll();
+//     cout << l.getAtTail();
+//     return 0;
+// }
