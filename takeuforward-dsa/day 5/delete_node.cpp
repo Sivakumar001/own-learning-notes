@@ -17,7 +17,7 @@ int main(){
     l.addAtTail(3);
     l.addAtTail(4);
     l.addAtTail(5);
-
+    //setting que
     Node* que_node = l.head;
     for(int i=0;i<2;i++){
         que_node = que_node->next; 

@@ -51,6 +51,19 @@ class linked_list{
                 return current->value;
             }
         }
+
+        Node* getNodeAtIndex(int index){
+            if(index<0 || index>=size)return new Node(-1);
+            Node* current = head;
+            if(index==0){
+                return current;
+            }else{
+                for(int i=1;i<=index;i++){
+                    current = current->next;
+                }
+                return current;
+            }
+        }
         void printAll(){
             Node *current = head;
             while(current!=nullptr){
@@ -76,7 +89,7 @@ class linked_list{
         }
         ~linked_list(){
             Node *ptr = head;
-            while(head!=nullptr){
+            while(head){
                 head=head->next;
                 delete ptr;
                 ptr = head;
