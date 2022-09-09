@@ -7,10 +7,12 @@ void remove_at_nth(linked_list &l, int n){
     for(int i=1;i<=n;i++){
         node1 = node1->next;
     }
+
     while(node1->next){
         node1 = node1->next;
         node2 = node2->next;
     }
+    
     node1 = node2->next;
     node2->next = node1->next;
     delete node1;
