@@ -7,7 +7,7 @@ bool check_palindrome(Node* head){
     Node* slow = head;
     Node* fast = head;
     // middle of LL
-    while(fast->next->next && fast ){
+    while(fast->next && fast ){
         slow = slow->next;
         fast = fast->next->next;
     }
