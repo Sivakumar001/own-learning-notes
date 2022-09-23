@@ -10,6 +10,7 @@ struct knap{
 bool static comparator(knap a, knap b){
     double a_ppv = a.value/a.weight;
     double b_ppv = b.value/b.weight;
+    
     if(a_ppv>b_ppv)return true;
     else if(a_ppv<b_ppv)return false;
     else if(a.weight<b.weight)return true;

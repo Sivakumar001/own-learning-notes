@@ -11,6 +11,7 @@ bool meeting_comparator(meeting m1, meeting m2){
     if(m1.end < m2.end)return true;
     else if(m1.end > m2.end)return false;
     else if(m1.pos < m2.pos)return true;
+    return false;
 }
 
 vector<int> n_meetings(vector<int> start, vector<int> end){
