@@ -19,7 +19,7 @@ void sort012(vector<int> &nums){
     }
 }
 int main(){
-    vector<int> ans = {0};
+    vector<int> ans = {2,1,0};
     sort012(ans);
     for(auto it: ans){
         cout << it << "\t";
