@@ -2,44 +2,31 @@
 
 using namespace std;
 
-vector<int> nextPermutation(vector<int> arr){
-    int i=arr.size()-2;
-    for(;i>=0;i--){
-        if(arr[i]<arr[i+1])break;
+string kthPermutations(int n, int k){
+    int factorial=1;
+    vector<int> numbers;
+    for(int i=1;i<=n;i++){
+        factorial = factorial * i;
+        numbers.push_back(i);
     }
-    if(i<0){
-        reverse(arr.begin(), arr.end());
-    }else{
-        int j=arr.size()-1;
-        for(;j>=i;j--){
-            if(arr[j]>arr[i])break;
-        }
-        swap(arr[i], arr[j]);
-        reverse(arr.begin()+(i+1), arr.end());
+    string ans = "";
+    k = k-1;
+    while(true){
+        if(numbers.size()==0){break;}
+        factorial = factorial/numbers.size();
+        int idx = k/factorial;
+        string index = to_string(numbers[k/factorial]);
+        numbers.erase(numbers.begin()+(k/factorial));
+        k = k%factorial;
+        ans+=index;
     }
-    return arr;
-}
-
-void findPermutations(vector<string> &ans, string &s, int start, int end, int k, int count){
-    if(start==end){
-        ans.push_back(s);
-        return;
-    }
-    for(int i=start;i<=end;i++){
-        swap(s[start], s[i]);
-        findPermutations(ans, s, start+1, end, k, count+1);
-        swap(s[start], s[i]);
-    }
-    return;
+    return ans;
 }
 
 int main(){
-    string s="123";
-    vector<string> ans;
-    int k=1, count=0;
-    findPermutations(ans, s, 0, s.size()-1, k, count);
-    for(auto it: ans){
-        cout << it << endl;
-    }
+    int n=3;
+    int k=3;
+    string s = kthPermutations(n, k);
+    cout << s;
     return 0;
 }
