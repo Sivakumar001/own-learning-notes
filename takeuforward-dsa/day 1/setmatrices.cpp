@@ -6,7 +6,7 @@ using namespace std;
 void set_matrices(vector<vector<int>> &matrix){
     bool colRow=0;
         int row=matrix.size()-1,col=matrix[0].size()-1;
-        
+
         for(int i=0;i<matrix.size();i++){
             if(matrix[i][0]==0)colRow=1;
             for(int j=1;j<matrix[0].size();j++){
@@ -15,7 +15,7 @@ void set_matrices(vector<vector<int>> &matrix){
                 }
             }
         }
-        
+
         for(row=matrix.size()-1;row>=0;row--){
             for(col=matrix[0].size()-1;col>=1;col--){
                 if(matrix[0][col]==0 || matrix[row][0]==0){

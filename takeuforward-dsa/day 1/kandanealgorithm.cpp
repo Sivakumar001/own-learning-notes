@@ -1,7 +1,7 @@
 #include<bits/stdc++.h>
 using namespace std;
 // kadanae algo or sliding window
-// if the max of sum is lesser than the iterator itself 
+// if the max of sum is lesser than the iterator itself
 // throw the subarr collection and start at current itr
 // this method is called sliding window
 pair<vector<int>, int> kandane_algorithm(vector<int> &nums){
@@ -25,7 +25,7 @@ pair<vector<int>, int> kandane_algorithm(vector<int> &nums){
         }
     }
     vector<int> ans(nums.begin()+j, nums.begin()+k+1);
-    
+
     return ans_pair = make_pair(ans, max_sum);
 }
 // 1,-3,2,1,-1

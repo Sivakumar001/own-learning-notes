@@ -2,7 +2,7 @@
 
 using namespace std;
 
-void PhoneCombo(unordered_map<char, string> &phoneBook, 
+void PhoneCombo(unordered_map<char, string> &phoneBook,
                 vector<string> &answer,
                 string &number,
                 string &ds,
@@ -29,7 +29,7 @@ int main(){
     phoneBook['7']="pqrs";
     phoneBook['8']="tuv";
     phoneBook['9']="wxyz";
-    
+
     string number="1";
     vector<string> answer;
     string ds;

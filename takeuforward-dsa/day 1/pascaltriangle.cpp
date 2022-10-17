@@ -11,7 +11,7 @@ vector<vector<int>> pascal_triangle(int rows){
     // loop through n rows
     for(int n=0; n<rows; n++){
         ans[n].resize(n+1);
-        ans[n][0] = ans[n][n] = 1; 
+        ans[n][0] = ans[n][n] = 1;
         // set first and last as 1
         // inbetween arr values equal toparr+ toparr-1 values
         for(int k=1; k<n; k++){
