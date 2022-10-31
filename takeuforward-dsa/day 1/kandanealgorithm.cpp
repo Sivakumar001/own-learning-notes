@@ -4,6 +4,17 @@ using namespace std;
 // if the max of sum is lesser than the iterator itself
 // throw the subarr collection and start at current itr
 // this method is called sliding window
+
+int kadanae_algo(vector<int> &nums){
+    int cur_sum=0,max_sum=0;
+    for(int i=0;i<nums.size();i++){
+        cur_sum = max(nums[i], cur_sum+nums[i]);
+        max_sum = max(max_sum, cur_sum);
+    }
+    return max_sum;
+}
+
+// what is this complication
 pair<vector<int>, int> kandane_algorithm(vector<int> &nums){
     int n=nums.size(), sum=0, i, j=0, k=0, max_sum=INT16_MIN;
     pair<vector<int>, int> ans_pair = make_pair(nums, max_sum);
@@ -30,6 +41,7 @@ pair<vector<int>, int> kandane_algorithm(vector<int> &nums){
 }
 // 1,-3,2,1,-1
 // -2,1,-3,4,-1,2,1,-5,4
+
 int main(){
     vector<int> question = {-2,1,-3,4,-1,2,1,-5,4};
     pair<vector<int>, int> answer;

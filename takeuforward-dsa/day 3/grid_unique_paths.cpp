@@ -18,7 +18,7 @@ int unique_path(int m, int n, vector<vector<int>> &dp, int i, int j){
 }
 
 
-// combination problem 
+// combination problem
 int unique_path(int m, int n){
     double result = 1.0;
     int N = m+n-2;

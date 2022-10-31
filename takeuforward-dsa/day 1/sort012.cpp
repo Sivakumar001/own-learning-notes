@@ -11,7 +11,7 @@ void sort012(vector<int> &nums){
             swap(nums[high], nums[i]);
             high--;
         }
-        
+
         if(nums[i]==0){
             swap(nums[low], nums[i]);
             low++;
@@ -19,7 +19,7 @@ void sort012(vector<int> &nums){
     }
 }
 int main(){
-    vector<int> ans = {2,1,0};
+    vector<int> ans = {2,0,1,1,2,0};
     sort012(ans);
     for(auto it: ans){
         cout << it << "\t";

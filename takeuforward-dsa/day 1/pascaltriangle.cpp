@@ -24,7 +24,10 @@ vector<vector<int>> pascal_triangle(int rows){
 vector<int> specific_array(int rowLength){
     // identify a specific row of pascal's triangle
     // can use combination in this problem
+    // according to formula row-1C col-1
+    // so we reduce rowLen and col as 0 based index
     int res;
+    rowLength--;
     vector<int> ans(rowLength+1, 0);
     res = ans[0]=1;
     for(int i=0; i<rowLength; i++){
@@ -41,13 +44,15 @@ int main(){
     vector<vector<int>> answer;
     vector<int> ans = specific_array(rows);
     answer = pascal_triangle(rows);
+
     for(auto it: ans){
-        cout << it;
+        cout << it << " ";
     }
     cout << "\n";
+
     for(auto it: answer){
         for(auto itr : it){
-            cout << itr;
+            cout << itr << " ";
         }
         cout << "\n";
     }

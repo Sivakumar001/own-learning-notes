@@ -16,18 +16,18 @@ int merge_arr(vector<int> arr, vector<int> temp, int low, int mid, int high){
             count += mid - i;
         }
     }
-    
+
     while(i<=mid-1){
         temp[k++] = arr[i++];
     }
     while(j<=high){
         temp[k++] = arr[j++];
     }
-    
+
     for(int i=0;i<=high;i++){
         arr[i] = temp[i];
     }
-    
+
     return count;
 }
 
