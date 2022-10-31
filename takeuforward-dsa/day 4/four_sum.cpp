@@ -5,28 +5,31 @@ using namespace std;
 vector<vector<int>> four_sum(vector<int> &arr, int target){
     vector<vector<int>> ans;
     sort(arr.begin(), arr.end());
-    
+
     int n=arr.size();
     int i,j,left,right;
-    
-    for(i=0;i<=n-4;i++){
-        for(j=i+1;j<=n-3;j++){
-            int rem_sum = target - (arr[i] + arr[j]);
-            left=j+1; right=n-1;
 
-            while(left<right){
-                int bs_sum=arr[left]+arr[right];
-                if(bs_sum == rem_sum){
-                    ans.push_back({arr[i], arr[j], arr[left], arr[right]}); 
-                    int left_comp=arr[left], right_comp=arr[right];
-                    while(arr[right]==right_comp)right--;
-                    while(arr[left]==left_comp)left++;
-                }
-                if(bs_sum>rem_sum){
-                    right--;
-                }
-                else if(bs_sum<rem_sum){
-                    left++;
+    for(i=0;i<=n-4;i++){
+        if(arr[i]!=arr[i-1] || i==0){
+            for(j=i+1;j<=n-3;j++){
+                if(arr[j-1]!=arr[j] || j==1){
+                    left=j+1; right=n-1;
+
+                    while(left<right){
+                        int total_sum = arr[i]+arr[j]+arr[left]+arr[right];
+                        if(target == total_sum){
+                            ans.push_back({arr[i], arr[j], arr[left], arr[right]});
+                            int left_comp=arr[left], right_comp=arr[right];
+                            while(arr[right]==right_comp)right--;
+                            while(arr[left]==left_comp)left++;
+                        }
+                        if(target<total_sum){
+                            right--;
+                        }
+                        else if(target>total_sum){
+                            left++;
+                        }
+                    }
                 }
             }
         }

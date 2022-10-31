@@ -3,7 +3,7 @@ using namespace std;
 
 // based on finding first number
 // create a set of question
-// find the first iteration in the vct from set 
+// find the first iteration in the vct from set
 // from that find max value
 // 100->
 // 200->

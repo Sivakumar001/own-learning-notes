@@ -4,6 +4,7 @@ using namespace std;
 int longest_subarr_sum(vector<int> &arr){
     unordered_map<int, int> un_map;
     int sum=0, max_sum=INT16_MIN;
+
     for(int i=0;i<arr.size();i++){
         sum += arr[i];
         if(sum==0){
@@ -11,7 +12,7 @@ int longest_subarr_sum(vector<int> &arr){
         }
         else{
             if(un_map.find(sum)!=un_map.end()){
-                max_sum = max(max_sum, i-(un_map[sum]+1)+1);
+                max_sum = max(max_sum, i-(un_map[sum]+1)+1); //next to hash | from 0 index to 1 based index
             }else{
                 un_map[sum]=i;
             }

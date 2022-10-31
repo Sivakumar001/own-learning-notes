@@ -14,6 +14,7 @@ vector<int> two_sum(vector<int> arr, int target){
         }
         sum_map[target-arr[i]]=i;
     }
+
     map<int,int> s;
     for(auto it: arr){
         if(s.find(it)!=s.end()){
@@ -21,6 +22,7 @@ vector<int> two_sum(vector<int> arr, int target){
         }
         s[target-it]=it;
     }
+
     for(auto val: s){
         cout << val.first << "\t" << val.second << "\n";
     }

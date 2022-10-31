@@ -19,7 +19,7 @@ class linked_list{
 
         int getAtHead(){return getAtIndex(0);}
         int getAtTail(){return getAtIndex(size-1);}
-        
+
         void addAtIndex(int index, int value){
             if(index<0 || index>size){
                 return;

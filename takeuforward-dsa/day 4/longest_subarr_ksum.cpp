@@ -10,7 +10,7 @@ int longest_subarr_ksum(vector<int> &arr, int target){
             max_len = max(max_len, i+1);
         }else{
             if(un_map.find(sum-target)!=un_map.end()){
-                max_len = max(max_len, (i-un_map[sum-target]));
+                max_len = max(max_len, (i-un_map[sum-target]+1)+1);
             }
             else{
                 un_map[sum]=i;
@@ -21,7 +21,7 @@ int longest_subarr_ksum(vector<int> &arr, int target){
 }
 
 int main(){
-    vector<int> mat = {2,1,1,1,1,5,4,-1,2,1,-5,4};
+    vector<int> mat = {2,1,5,4,-1,2,1,-5,4};
     cout << longest_subarr_ksum(mat, 6);
     return 0;
 }

@@ -17,7 +17,7 @@ int longest_substring_without_repeat(string s){
 }
 int main(){
     string s="abcabcbb";
-    cout << longest_substring_without_repeat(s);   
+    cout << longest_substring_without_repeat(s);
     return 0;
 }
 
