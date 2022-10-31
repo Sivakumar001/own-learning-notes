@@ -24,7 +24,7 @@ vector<vector<int>> three_sum(vector<int> arr){
                 }
                 else if(total<0){
                     left++;
-                }     
+                }
             }
         }
     }

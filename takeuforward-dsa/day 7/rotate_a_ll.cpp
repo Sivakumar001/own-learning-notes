@@ -31,7 +31,7 @@ Node* rotate_list(Node* head, int k){
     for(int i=0;i<k%len;i++){
         fast = fast->next;
     }
-    
+
     while(fast->next!=nullptr){
         fast = fast->next;
         slow = slow->next;
@@ -40,7 +40,7 @@ Node* rotate_list(Node* head, int k){
     fast->next = head;
     head = slow->next;
     slow->next = nullptr;
-    
+
     return head;
 }
 
