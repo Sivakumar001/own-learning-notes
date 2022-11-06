@@ -7,20 +7,20 @@
 */
 void list_concept(){
     std::list<int> sample_list;
-    
+
     for(int i=0;i<10;i++){
         sample_list.push_back(i);
     }
-    
+
     for(int i=10;i<20;i++){
         sample_list.push_front(i);
     }
 
     sample_list.pop_back();
-    
+    sample_list.pop_front();
     std::list<int>::iterator it = std::prev(sample_list.end(), 3);
     sample_list.erase(it);
-    
+
     for(auto it: sample_list){
         LOG(it);
     }
