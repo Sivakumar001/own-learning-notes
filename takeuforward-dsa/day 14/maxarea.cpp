@@ -2,43 +2,50 @@
 
 using namespace std;
 
-int max_area(vector<int> arr){
-    int max_area=0, area=0;
-    vector<int> max_right;
-    stack<int> max_stack;
+int max_area(vector<int> heights){
+    int n = heights.size();
+    int max_area = 0;
 
-    for(int i=arr.size()-1;i>=0;i--){
-        while(!max_stack.empty() && arr[i]<=arr[max_stack.top()]){
-            max_stack.pop();
+    vector<int> left(n), right(n);
+    stack<int> stk;
+
+    for(int i=0;i<n;i++){
+        while(!stk.empty() && heights[i]<=heights[stk.top()]){
+            stk.pop();
         }
-        max_right.push_back(max_stack.empty()?-1:max_stack.top()-1);
-        max_stack.push(i);
-    }
-    reverse(max_right.begin(), max_right.end());
-    while(!max_stack.empty()){
-        max_stack.pop();
-    }
-
-    for(int i=0;i<arr.size();i++){
-
-        while(!max_stack.empty() && arr[i]<=arr[max_stack.top()]){
-            max_stack.pop();
+        if(stk.empty()){
+            left[i]=0;
+        }else{
+            left[i] = stk.top()+1;
         }
-
-        int distance = (max_right[i]<0?0:max_right[i]) -(max_stack.empty()?0:arr[max_stack.top()]+1) + 1;
-        area = distance*arr[i];
-        if(max_area<area){
-            max_area = area;
-        }
-
-        max_stack.push(i);
+        stk.push(i);
     }
 
+    while(!stk.empty())stk.pop();
+
+    for(int i=n-1;i>=0;i--){
+        while(!stk.empty() && heights[i]<=heights[stk.top()]){
+            stk.pop();
+        }
+        if(stk.empty()){
+            right[i] = n-1;
+        }
+        else{
+            right[i] = stk.top()-1;
+        }
+        stk.push(i);
+    }
+    for(auto it: right){
+        cout << it << " ";
+    }
+    for(int i=0;i<n;i++){
+        max_area = max(max_area, (right[i]-left[i]+1)*heights[i]);
+    }
     return max_area;
 }
 
 int main(){
-    vector<int> arr = {2,4};
+    vector<int> arr = {2,1,5,6,2,3};
     cout << max_area(arr);
     return 0;
 }
