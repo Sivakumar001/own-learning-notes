@@ -19,7 +19,7 @@ int number_of_platforms(vector<int> arr, vector<int> dept){
         }
         max_platforms = max(max_platforms, platform);
     }
-    
+
     return max_platforms;
 }
 
