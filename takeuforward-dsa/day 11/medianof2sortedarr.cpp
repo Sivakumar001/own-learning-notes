@@ -18,7 +18,7 @@ double finding_median(vector<int> &arr1, vector<int> &arr2){
 
         if(left1<=right2 && left2<=right1){
             if(m+n%2==0){
-                return (min(left1, left2)+min(right1, right2))/2.0;
+                return (max(left1, left2)+min(right1, right2))/2.0;
             }else{
                 return max(left1, left2);
             }
