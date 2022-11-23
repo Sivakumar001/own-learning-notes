@@ -33,8 +33,8 @@ vector<int> inorder_traversal(Node* root){
 }
 
 int main(){
-    int arr[] = {1,2,3};
-    Node* n = buildTree(arr,3);
+    vector<int> arr = {1,2,3};
+    Node* n = buildTree(arr, arr.size());
     vector<int> ans = inorder_traversal(n);
     // inorder_traversal(n, ans);
     for(auto it: ans){

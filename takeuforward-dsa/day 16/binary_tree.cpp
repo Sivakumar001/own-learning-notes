@@ -16,7 +16,7 @@ class Node
     }
 };
 
-Node* buildTree(int arr[], int n, int i=0)
+Node* buildTree(vector<int>& arr, int n, int i=0)
 {
     Node *root = nullptr;
     // Base case for recursion

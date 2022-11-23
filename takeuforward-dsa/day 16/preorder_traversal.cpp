@@ -29,8 +29,8 @@ vector<int> preorder_traversal(Node* root){
 }
 
 int main(){
-    int arr[] = {1,2,3};
-    Node* n = buildTree(arr, 3);
+    vector<int> arr = {1,2,3};
+    Node* n = buildTree(arr, arr.size());
     vector<int> ans = preorder_traversal(n);
     for(auto it: ans){
         cout << it << " ";
