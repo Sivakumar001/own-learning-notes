@@ -16,7 +16,7 @@ bool meeting_comparator(meeting m1, meeting m2){
 
 vector<int> n_meetings(vector<int> start, vector<int> end){
     vector<int> answer;
-    
+
     vector<meeting> meetings(start.size());
     for(int i=0;i<start.size();i++){
         meetings[i].start = start[i];
@@ -25,9 +25,11 @@ vector<int> n_meetings(vector<int> start, vector<int> end){
     }
 
     sort(meetings.begin(), meetings.end(), meeting_comparator);
+
     for(auto itr: meetings){
-        cout << itr.start << " " << itr.end;
+        cout << itr.start << " " << itr.end << endl;
     }
+
     int limit = meetings[0].end;
     answer.push_back(meetings[0].pos);
 
