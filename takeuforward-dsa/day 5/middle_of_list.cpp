@@ -4,9 +4,9 @@
 using namespace std;
 
 int find_middle(linked_list &l){
-    Node *head = l.head;
-    Node *node1 = head;
-    Node *node2 = head;
+    ListNode *head = l.head;
+    ListNode *node1 = head;
+    ListNode *node2 = head;
 
     while(node2!=nullptr && node2->next!=nullptr){
         node1 = node1->next;

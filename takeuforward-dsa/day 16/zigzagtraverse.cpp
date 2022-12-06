@@ -3,9 +3,9 @@
 
 using namespace std;
 
-vector<vector<int>> zigzag(Node* root){
+vector<vector<int>> zigzag(TreeNode* root){
     vector<vector<int>> ans;
-    queue<Node*> q;
+    queue<TreeNode*> q;
     q.push(root);
     bool flag=true;
 
@@ -14,7 +14,7 @@ vector<vector<int>> zigzag(Node* root){
         int size = q.size();
         vector<int> cur_level(size);
         for(int i=0;i<size;i++){
-            Node* tmp = q.front();
+            TreeNode* tmp = q.front();
             q.pop();
             if(tmp->left)q.push(tmp->left);
             if(tmp->right)q.push(tmp->right);
@@ -50,7 +50,7 @@ vector<vector<int>> zigzag(Node* root){
 
 int main(){
     vector<int> arr = {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15};
-    Node* n = buildTree(arr, arr.size());
+    TreeNode* n = buildTree(arr, arr.size());
     vector<vector<int>> ans = zigzag(n);
     for(auto it: ans){
         for(auto itr: it){

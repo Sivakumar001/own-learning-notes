@@ -2,11 +2,11 @@
 #include"linked_list.cpp"
 
 void reverse_list(linked_list &l){
-    Node *head = l.head;
+    ListNode *head = l.head;
 
-    Node *current = head;
-    Node *prev = nullptr;
-    Node *nxt = nullptr;
+    ListNode *current = head;
+    ListNode *prev = nullptr;
+    ListNode *nxt = nullptr;
 
     while(current){
         nxt = current->next;
@@ -18,12 +18,12 @@ void reverse_list(linked_list &l){
     return;
 }
 
-Node* reverse_list(Node* head){
+ListNode* reverse_list(ListNode* head){
     if(head==nullptr || head->next==nullptr){
         return head;
     }
-    Node* newHead = reverse_list(head->next);
-    Node* headNext = head->next;
+    ListNode* newHead = reverse_list(head->next);
+    ListNode* headNext = head->next;
     headNext->next = head;
     head->next = nullptr;
     return newHead;

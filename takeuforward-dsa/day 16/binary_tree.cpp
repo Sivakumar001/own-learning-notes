@@ -1,14 +1,14 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 
-class Node
+class TreeNode
 {
-    public:
+public:
     int val;
-    Node* left;
-    Node* right;
+    TreeNode *left;
+    TreeNode *right;
 
-    Node(int v)
+    TreeNode(int v)
     {
         val = v;
         left = nullptr;
@@ -16,13 +16,13 @@ class Node
     }
 };
 
-Node* buildTree(vector<int>& arr, int n, int i=0)
+TreeNode *buildTree(vector<int> &arr, int n, int i = 0)
 {
-    Node *root = nullptr;
+    TreeNode *root = nullptr;
     // Base case for recursion
     if (i < n)
     {
-        root = new Node(arr[i]);
+        root = new TreeNode(arr[i]);
         // insert left child
         root->left = buildTree(arr, n, 2 * i + 1);
         // insert right child

@@ -3,13 +3,13 @@
 
 using namespace std;
 
-vector<int> top_viewtree(Node* root){
+vector<int> top_viewtree(TreeNode* root){
     vector<int> ans;
     map<int, int> mpset;
-    queue<pair<Node*, int>> que;
+    queue<pair<TreeNode*, int>> que;
     que.push({root, 0});
     while(!que.empty()){
-        Node* tmp = que.front().first;
+        TreeNode* tmp = que.front().first;
         int pos = que.front().second;
         que.pop();
         if(mpset.find(pos)==mpset.end()){
@@ -30,7 +30,7 @@ vector<int> top_viewtree(Node* root){
 
 int main(){
     vector<int> arr = {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15};
-    Node* n = buildTree(arr, arr.size());
+    TreeNode* n = buildTree(arr, arr.size());
     vector<int> ans=top_viewtree(n);
     for(auto it: ans){
         cout << it << " ";

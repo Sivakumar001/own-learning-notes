@@ -3,10 +3,10 @@
 
 using namespace std;
 
-Node* find_start_of_cycle(Node* head){
+ListNode* find_start_of_cycle(ListNode* head){
     if(head==nullptr)return head;
-    Node* slow = head;
-    Node* fast = head;
+    ListNode* slow = head;
+    ListNode* fast = head;
 
     while(fast!=nullptr){
         fast = fast->next;

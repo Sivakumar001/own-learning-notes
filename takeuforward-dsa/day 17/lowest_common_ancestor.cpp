@@ -3,12 +3,12 @@
 
 using namespace std;
 
-Node* findCommonAncestor(Node* root, int x, int y, int& common){
+TreeNode* findCommonAncestor(TreeNode* root, int x, int y, int& common){
     if(root==NULL || root->val==x || root->val==y){
         return root;
     }
-    Node* left = findCommonAncestor(root->left, x, y, common);
-    Node* right = findCommonAncestor(root->right, x, y, common);
+    TreeNode* left = findCommonAncestor(root->left, x, y, common);
+    TreeNode* right = findCommonAncestor(root->right, x, y, common);
 
     if(!left){
         return right;
@@ -24,7 +24,7 @@ Node* findCommonAncestor(Node* root, int x, int y, int& common){
 
 int main(){
     vector<int> arr = {1,2,3,4,5,6};
-    Node* root = buildTree(arr, arr.size());
+    TreeNode* root = buildTree(arr, arr.size());
     int common_ancestor = 0;
     int x=4, y=5;
     findCommonAncestor(root, x, y, common_ancestor);

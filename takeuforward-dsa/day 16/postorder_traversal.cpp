@@ -3,7 +3,7 @@
 
 using namespace std;
 //using recursion
-void postorder_traversal(Node* root, vector<int>& vct){
+void postorder_traversal(TreeNode* root, vector<int>& vct){
     if(root==nullptr){
         return;
     }
@@ -13,9 +13,9 @@ void postorder_traversal(Node* root, vector<int>& vct){
 }
 
 //using stack
-vector<int> postorder_traversal(Node* root){
+vector<int> postorder_traversal(TreeNode* root){
     vector<int> ans;
-    stack<Node*> st;
+    stack<TreeNode*> st;
     while(root!=nullptr || !st.empty()){
         if(root!=nullptr){
             st.push(root);
@@ -23,7 +23,7 @@ vector<int> postorder_traversal(Node* root){
         }
         else
         {
-            Node* tmp = st.top()->right;
+            TreeNode* tmp = st.top()->right;
             if(tmp==nullptr)
             {
                 tmp = st.top();
@@ -46,7 +46,7 @@ vector<int> postorder_traversal(Node* root){
 
 int main(){
     vector<int> arr = {1,2,3};
-    Node* n = buildTree(arr, arr.size());
+    TreeNode* n = buildTree(arr, arr.size());
     vector<int> ans = postorder_traversal(n);
     // postorder_traversal(n, ans);
     for(auto it: ans){

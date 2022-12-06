@@ -5,15 +5,15 @@ using namespace std;
 // https://github.com/azl397985856/leetcode/blob/master/problems/25.reverse-nodes-in-k-groups-en.md
 
 // using recursion
-Node* reverse_in_groups(Node* head, int k, int length){
+ListNode* reverse_in_groups(ListNode* head, int k, int length){
     //created length to stop when len<k to avoid reversing nodes less than k
     if(head==nullptr || head->next==nullptr || length<k){
         return head;
     }
 
-    Node* currNode = head;
-    Node* prevNode = nullptr;
-    Node* nxtNode = nullptr;
+    ListNode* currNode = head;
+    ListNode* prevNode = nullptr;
+    ListNode* nxtNode = nullptr;
     int count = 0;
 
     while(currNode!=nullptr && count<k){
@@ -39,7 +39,7 @@ int main(){
     l.addAtTail(5);
     l.addAtTail(6);
 
-    Node* ans = reverse_in_groups(l.head, 4, l.size);
+    ListNode* ans = reverse_in_groups(l.head, 4, l.size);
     while(ans){
         cout << ans->value << "-> ";
         ans = ans->next;

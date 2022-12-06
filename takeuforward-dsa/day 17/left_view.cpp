@@ -6,16 +6,16 @@ using namespace std;
 // This level order traversal works but queue takes extra space compared
 // to recursion traversal pre/in/postorder.
 
-vector<int> left_view(Node* root){
+vector<int> left_view(TreeNode* root){
     vector<int> ans;
     if(!root)return ans;
 
     map<int, int> leftMap;
-    queue<pair<Node*, int>> levelTraversal;
+    queue<pair<TreeNode*, int>> levelTraversal;
     levelTraversal.push({root, 0});
 
     while(!levelTraversal.empty()){
-        Node* cur = levelTraversal.front().first;
+        TreeNode* cur = levelTraversal.front().first;
         int pos = levelTraversal.front().second;
         levelTraversal.pop();
 
@@ -38,7 +38,7 @@ vector<int> left_view(Node* root){
     return ans;
 }
 
-void left_view(Node* root, map<int, int>& ans, int pos=0){
+void left_view(TreeNode* root, map<int, int>& ans, int pos=0){
     if(!root){
         return;
     }
@@ -55,7 +55,7 @@ void left_view(Node* root, map<int, int>& ans, int pos=0){
 
 int main(){
     vector<int> arr = {1,2,3,4,5,6,7,8,9,10};
-    Node* question = buildTree(arr, arr.size());
+    TreeNode* question = buildTree(arr, arr.size());
     vector<int> ans = left_view(question);
     map<int, int> cur_map;
 

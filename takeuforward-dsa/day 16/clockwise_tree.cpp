@@ -3,14 +3,14 @@
 
 using namespace std;
 
-bool isLeaf(Node* root)
+bool isLeaf(TreeNode* root)
 {
     return !root->left && !root->right;
 }
 
-void addLeftSide(Node*root, vector<int>& vct)
+void addLeftSide(TreeNode*root, vector<int>& vct)
 {
-    Node* cur = root->left;
+    TreeNode* cur = root->left;
     while(cur){
         if(!isLeaf(cur))vct.push_back(cur->val);
         if(cur->left){
@@ -22,7 +22,7 @@ void addLeftSide(Node*root, vector<int>& vct)
     }
 }
 
-void addLeaves(Node* root, vector<int>& vct){
+void addLeaves(TreeNode* root, vector<int>& vct){
     if(isLeaf(root)){
         vct.push_back(root->val);
         return;
@@ -31,8 +31,8 @@ void addLeaves(Node* root, vector<int>& vct){
     if(root->right)addLeaves(root->right, vct);
 }
 
-void addRightSide(Node* root, vector<int>& vct){
-    Node* cur = root->right;
+void addRightSide(TreeNode* root, vector<int>& vct){
+    TreeNode* cur = root->right;
     vector<int> st;
     while(cur){
         if(!isLeaf(root))st.push_back(cur->val);
@@ -48,7 +48,7 @@ void addRightSide(Node* root, vector<int>& vct){
     }
 }
 
-vector<int> rotate_anticlockwise(Node* root){
+vector<int> rotate_anticlockwise(TreeNode* root){
     vector<int> ans;
     if(root==nullptr)return ans;
     if(!isLeaf(root))ans.push_back(root->val);
@@ -60,7 +60,7 @@ vector<int> rotate_anticlockwise(Node* root){
 
 int main(){
     vector<int> arr = {1,2,3,4,5,6,7,8,9,10,11,12,13};
-    Node* n = buildTree(arr, arr.size());
+    TreeNode* n = buildTree(arr, arr.size());
     vector<int> ans = rotate_anticlockwise(n);
     for(auto it: ans){
         cout << it << " ";

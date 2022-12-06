@@ -3,10 +3,10 @@
 
 using namespace std;
 
-Node* reverse_list(Node* head){
+ListNode* reverse_list(ListNode* head){
     if(head==nullptr || head->next==nullptr)return head;
-    Node* prev = nullptr;
-    Node* nxt = nullptr;
+    ListNode* prev = nullptr;
+    ListNode* nxt = nullptr;
     while(head){
         nxt = head->next;
         head->next = prev;
@@ -16,8 +16,8 @@ Node* reverse_list(Node* head){
     return prev;
 }
 
-Node* rotate_list(Node* head, int k){
-    Node* tmp = head;
+ListNode* rotate_list(ListNode* head, int k){
+    ListNode* tmp = head;
     int len=0;
     while(tmp){
         tmp = tmp->next;
@@ -25,8 +25,8 @@ Node* rotate_list(Node* head, int k){
     }
 
     if(head==nullptr|| head->next==nullptr || k==0)return head;
-    Node* fast = head;
-    Node* slow = head;
+    ListNode* fast = head;
+    ListNode* slow = head;
 
     for(int i=0;i<k%len;i++){
         fast = fast->next;

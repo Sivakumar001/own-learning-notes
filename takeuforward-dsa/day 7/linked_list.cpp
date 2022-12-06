@@ -1,16 +1,16 @@
 #include<iostream>
 using namespace std;
 
-class Node{
+class ListNode{
     public:
         int value;
-        Node *next;
-        Node(int x):value(x),next(nullptr){};
+        ListNode *next;
+        ListNode(int x):value(x),next(nullptr){};
 };
 
 class linked_list{
     public:
-        Node* head;
+        ListNode* head;
         int size;
         linked_list():head(nullptr),size(0){};
 
@@ -19,13 +19,13 @@ class linked_list{
 
         int getAtHead(){return getAtIndex(0);}
         int getAtTail(){return getAtIndex(size-1);}
-        
+
         void addAtIndex(int index, int value){
             if(index<0 || index>size){
                 return;
             }
-            Node* current = head;
-            Node* new_node = new Node(value);
+            ListNode* current = head;
+            ListNode* new_node = new ListNode(value);
             if(index==0){
                 new_node->next = current;
                 head = new_node;
@@ -41,7 +41,7 @@ class linked_list{
 
         int getAtIndex(int index){
             if(index<0 || index>=size)return -1;
-            Node* current = head;
+            ListNode* current = head;
             if(index==0){
                 return current->value;
             }else{
@@ -52,9 +52,9 @@ class linked_list{
             }
         }
 
-        Node* getNodeAtIndex(int index){
-            if(index<0 || index>=size)return new Node(-1);
-            Node* current = head;
+        ListNode* getNodeAtIndex(int index){
+            if(index<0 || index>=size)return new ListNode(-1);
+            ListNode* current = head;
             if(index==0){
                 return current;
             }else{
@@ -65,7 +65,7 @@ class linked_list{
             }
         }
         void printAll(){
-            Node *current = head;
+            ListNode *current = head;
             while(current!=nullptr){
                 cout << current->value << "-> ";
                 current = current->next;
@@ -73,7 +73,7 @@ class linked_list{
         }
         void deleteAtIndex(int index){
             if(index<0 || index>=size)return;
-            Node *current=head;
+            ListNode *current=head;
             if(index==0){
                 head = head->next;
                 delete current;
@@ -81,14 +81,14 @@ class linked_list{
                 for(int i=0;i<index-1;i++){
                     current = current->next;
                 }
-                Node* tmp = current->next;
+                ListNode* tmp = current->next;
                 current->next = tmp->next;
                 delete tmp;
             }
             size--;
         }
         ~linked_list(){
-            Node *ptr = head;
+            ListNode *ptr = head;
             while(head){
                 head=head->next;
                 delete ptr;

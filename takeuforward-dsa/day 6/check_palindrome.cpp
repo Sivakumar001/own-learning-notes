@@ -3,18 +3,18 @@
 
 using namespace std;
 
-bool check_palindrome(Node* head){
-    Node* slow = head;
-    Node* fast = head;
+bool check_palindrome(ListNode* head){
+    ListNode* slow = head;
+    ListNode* fast = head;
     // middle of LL
     while(fast->next && fast ){
         slow = slow->next;
         fast = fast->next->next;
     }
     // reverse a LL
-    Node* prev = nullptr;
-    Node* curr = slow->next;
-    Node* nxt = nullptr;
+    ListNode* prev = nullptr;
+    ListNode* curr = slow->next;
+    ListNode* nxt = nullptr;
     while(curr){
         nxt = curr->next;
         curr->next = prev;

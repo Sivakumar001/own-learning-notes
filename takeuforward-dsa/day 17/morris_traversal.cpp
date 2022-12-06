@@ -3,16 +3,16 @@
 
 using namespace std;
 
-vector<int> getInorder(Node* root){
+vector<int> getInorder(TreeNode* root){
     vector<int> inorder;
-    Node* cur = root;
+    TreeNode* cur = root;
     while(cur!=nullptr){
         if(cur->left==NULL){
             inorder.push_back(cur->val);
             cur = cur->right;
         }
         else{
-            Node* pre = cur->left;
+            TreeNode* pre = cur->left;
             while(pre->right && pre->right!=cur){
                 pre = pre->right;
             }
@@ -30,16 +30,16 @@ vector<int> getInorder(Node* root){
     return inorder;
 }
 
-vector<int> getPreorder(Node* root){
+vector<int> getPreorder(TreeNode* root){
     vector<int> preorder;
-    Node* cur = root;
+    TreeNode* cur = root;
     while(cur!=nullptr){
         if(cur->left==NULL){
             preorder.push_back(cur->val);
             cur = cur->right;
         }
         else{
-            Node* pre = cur->left;
+            TreeNode* pre = cur->left;
             while(pre->right && pre->right!=cur){
                 pre = pre->right;
             }
@@ -59,7 +59,7 @@ vector<int> getPreorder(Node* root){
 
 int main(){
     vector<int> arr = {1,2,3,4,5,6,7};
-    Node* root = buildTree(arr, arr.size());
+    TreeNode* root = buildTree(arr, arr.size());
     vector<int> ans = getPreorder(root);
     for(auto it: ans){
         cout << it << " ";

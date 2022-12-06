@@ -4,7 +4,7 @@
 using namespace std;
 
 // using recursion
-void preorder_traversal(Node* root, vector<int>& vct){
+void preorder_traversal(TreeNode* root, vector<int>& vct){
     if(root==nullptr){
         return;
     }
@@ -14,12 +14,12 @@ void preorder_traversal(Node* root, vector<int>& vct){
 }
 
 //using stack
-vector<int> preorder_traversal(Node* root){
+vector<int> preorder_traversal(TreeNode* root){
     vector<int> ans;
-    stack<Node*> st;
+    stack<TreeNode*> st;
     st.push(root);
     while(!st.empty()){
-        Node* tmp = st.top();
+        TreeNode* tmp = st.top();
         st.pop();
         ans.push_back(tmp->val);
         if(tmp->right!=nullptr)st.push(tmp->right);
@@ -30,7 +30,7 @@ vector<int> preorder_traversal(Node* root){
 
 int main(){
     vector<int> arr = {1,2,3};
-    Node* n = buildTree(arr, arr.size());
+    TreeNode* n = buildTree(arr, arr.size());
     vector<int> ans = preorder_traversal(n);
     for(auto it: ans){
         cout << it << " ";

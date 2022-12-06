@@ -3,7 +3,7 @@
 
 using namespace std;
 
-bool isSymmetricHelper(Node* left, Node* right){
+bool isSymmetricHelper(TreeNode* left, TreeNode* right){
     if(!left || !right){
         return left==right;
     }
@@ -11,13 +11,13 @@ bool isSymmetricHelper(Node* left, Node* right){
     return isSymmetricHelper(left->right, right->left) && isSymmetricHelper(left->left, right->right);
 }
 
-bool isSymmetric(Node* root){
+bool isSymmetric(TreeNode* root){
     return !root || isSymmetricHelper(root->left, root->right);
 }
 
 int main(){
     vector<int> arr = {1,2,3,4,5,6,7};
-    Node* root = buildTree(arr, arr.size());
+    TreeNode* root = buildTree(arr, arr.size());
     if(isSymmetric(root)){
         cout << "Yes its symmetric";
     }

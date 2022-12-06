@@ -5,8 +5,8 @@ using namespace std;
 
 linked_list merge_sort(linked_list &l1, linked_list &l2){
     linked_list res;
-    Node* node1 = l1.head;
-    Node* node2 = l2.head;
+    ListNode* node1 = l1.head;
+    ListNode* node2 = l2.head;
 
     while(node1 && node2){
         if(node1->value < node2->value){

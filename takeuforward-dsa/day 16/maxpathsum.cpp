@@ -3,7 +3,7 @@
 
 using namespace std;
 
-int max_path_sum(Node* root, int& sum){
+int max_path_sum(TreeNode* root, int& sum){
     if(root==nullptr){
         return 0;
     }
@@ -16,7 +16,7 @@ int max_path_sum(Node* root, int& sum){
 
 int main(){
     vector<int> arr = {1,2,-1,4,5,6};
-    Node* n = buildTree(arr, arr.size());
+    TreeNode* n = buildTree(arr, arr.size());
     int max_sum = 0;
     max_path_sum(n, max_sum);
     cout << max_sum;

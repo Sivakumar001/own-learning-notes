@@ -2,8 +2,8 @@
 #include"linked_list.cpp"
 
 void remove_at_nth(linked_list &l, int n){
-    Node* node1 = l.head;
-    Node* node2 = l.head;
+    ListNode* node1 = l.head;
+    ListNode* node2 = l.head;
     for(int i=1;i<=n;i++){
         node1 = node1->next;
     }
@@ -12,7 +12,7 @@ void remove_at_nth(linked_list &l, int n){
         node1 = node1->next;
         node2 = node2->next;
     }
-    
+
     node1 = node2->next;
     node2->next = node1->next;
     delete node1;

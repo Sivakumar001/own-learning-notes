@@ -3,9 +3,9 @@
 
 using namespace std;
 
-linked_list add_two_ll(Node* l1, Node* l2){
-    Node* result = new Node(-1);
-    Node* current = result;
+linked_list add_two_ll(ListNode* l1, ListNode* l2){
+    ListNode* result = new ListNode(-1);
+    ListNode* current = result;
     int carry=0;
     while( (l1||l2) || carry){
         int sum=0;
@@ -19,7 +19,7 @@ linked_list add_two_ll(Node* l1, Node* l2){
         }
         sum+=carry;
         carry = sum/10;
-        Node* tmp = new Node(sum%10);
+        ListNode* tmp = new ListNode(sum%10);
         current->next = tmp;
         current = current->next;
     }

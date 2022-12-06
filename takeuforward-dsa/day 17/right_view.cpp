@@ -3,7 +3,7 @@
 
 using namespace std;
 
-void right_view(Node* root, map<int, int>& ans, int pos=0){
+void right_view(TreeNode* root, map<int, int>& ans, int pos=0){
     if(!root){
         return;
     }
@@ -16,7 +16,7 @@ void right_view(Node* root, map<int, int>& ans, int pos=0){
 
 int main(){
     vector<int> arr = {1,2,3,4,5,6,7,8,9,10};
-    Node* root = buildTree(arr, arr.size());
+    TreeNode* root = buildTree(arr, arr.size());
     map<int, int> ans;
     right_view(root, ans);
     for(auto it: ans){

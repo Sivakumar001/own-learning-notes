@@ -3,9 +3,9 @@
 
 using namespace std;
 
-Node* merge_two_list(Node* a, Node* b){
-    Node* res = new Node(-1);
-    Node* tmp = res;
+ListNode* merge_two_list(ListNode* a, ListNode* b){
+    ListNode* res = new ListNode(-1);
+    ListNode* tmp = res;
     while(a!=nullptr || b!=nullptr){
         if(a->value < b->value){
             tmp->next = a;
@@ -25,7 +25,7 @@ Node* merge_two_list(Node* a, Node* b){
     return res->next;
 }
 
-Node* flatten(Node* root){
+ListNode* flatten(ListNode* root){
     if(root==nullptr && root->next ==nullptr)return root;
     root->next = flatten(root->next);
     root = merge_two_list(root, root->next);//bottom

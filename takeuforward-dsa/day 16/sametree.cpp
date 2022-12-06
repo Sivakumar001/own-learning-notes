@@ -3,7 +3,7 @@
 
 using namespace std;
 
-bool isSame(Node* n, Node* m){
+bool isSame(TreeNode* n, TreeNode* m){
     if(n==nullptr || m==nullptr){
         return n==m;
     }
@@ -11,8 +11,8 @@ bool isSame(Node* n, Node* m){
 }
 int main(){
     vector<int> arr = {1,2,3};
-    Node* n = buildTree(arr, arr.size());
-    Node* m = buildTree(arr, arr.size());
+    TreeNode* n = buildTree(arr, arr.size());
+    TreeNode* m = buildTree(arr, arr.size());
     if(isSame(n, m)){
         cout << "Yes its true";
     }

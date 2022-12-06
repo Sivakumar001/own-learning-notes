@@ -3,7 +3,7 @@
 
 using namespace std;
 
-void getAllPaths(Node* root, vector<int>& dp, vector<vector<int>>& paths){
+void getAllPaths(TreeNode* root, vector<int>& dp, vector<vector<int>>& paths){
     if(!root)return;
     dp.push_back(root->val);
 
@@ -20,7 +20,7 @@ void getAllPaths(Node* root, vector<int>& dp, vector<vector<int>>& paths){
 
 int main(){
     vector<int> arr = {1,2,3,4,5,6,7,8,9,10,11};
-    Node* root = buildTree(arr, arr.size());
+    TreeNode* root = buildTree(arr, arr.size());
     vector<vector<int>> paths;
     vector<int> dp;
     getAllPaths(root, dp, paths);

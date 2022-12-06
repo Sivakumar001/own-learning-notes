@@ -32,7 +32,7 @@ bool rabin_karp(string text, string pattern){
 
 int main(){
     string text = "AAABBCCCDDEE";
-    string pattern="DE";
+    string pattern="DEFFFFGGG";
 
     if(rabin_karp(text, pattern)){
         cout << "found";

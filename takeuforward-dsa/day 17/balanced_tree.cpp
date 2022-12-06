@@ -3,7 +3,7 @@
 
 using namespace std;
 
-int is_balanced(Node* root){
+int is_balanced(TreeNode* root){
     if(!root)return 0;
 
     int left = is_balanced(root->left);
@@ -18,7 +18,7 @@ int is_balanced(Node* root){
 
 int main(){
     vector<int> arr = {1,2,3,4,5};
-    Node* root = buildTree(arr, arr.size());
+    TreeNode* root = buildTree(arr, arr.size());
     if(is_balanced(root)!=-1){
         cout << "it is balanced";
     }

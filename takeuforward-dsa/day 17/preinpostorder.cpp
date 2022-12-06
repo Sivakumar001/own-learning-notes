@@ -3,9 +3,9 @@
 
 using namespace std;
 
-vector<vector<int>> allorderTraversal(Node* root){
+vector<vector<int>> allorderTraversal(TreeNode* root){
     vector<int> preorder, inorder, postorder;
-    stack<pair<Node*, int>> st;
+    stack<pair<TreeNode*, int>> st;
     st.push({root, 0});
     while(!st.empty()){
         auto it = st.top();
@@ -40,7 +40,7 @@ vector<vector<int>> allorderTraversal(Node* root){
 }
 int main(){
     vector<int> arr = {1,2,3,4,5,6,7,8,9,10};
-    Node* root = buildTree(arr, arr.size());
+    TreeNode* root = buildTree(arr, arr.size());
     vector<vector<int>> ans = allorderTraversal(root);
     for(auto itr: ans){
         for(auto it: itr){
