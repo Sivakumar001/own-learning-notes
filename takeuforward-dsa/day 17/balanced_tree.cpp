@@ -15,7 +15,6 @@ int is_balanced(TreeNode* root){
     return max(left, right)+1;
 }
 
-
 int main(){
     vector<int> arr = {1,2,3,4,5};
     TreeNode* root = buildTree(arr, arr.size());

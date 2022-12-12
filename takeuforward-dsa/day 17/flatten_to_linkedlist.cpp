@@ -1,31 +1,35 @@
 #include<bits/stdc++.h>
-#include"..\day 5\linked_list.cpp"
 #include"..\day 16\binary_tree.cpp"
 
 using namespace std;
 
-void preorder_traversal(TreeNode* root){
+TreeNode* flatten_to_linked_list(TreeNode* root){
     stack<TreeNode*> stk;
-    linked_list l;
     stk.push(root);
+    TreeNode* linkedList= new TreeNode(-1);
+    TreeNode* ll = linkedList;
     while (!stk.empty())
     {
         TreeNode* cur = stk.top();
+        ll->left = cur;
         stk.pop();
-        cout << cur->val << " ";
-        l.addAtTail(cur->val);
         if(cur->right){
             stk.push(cur->right);
         }
         if(cur->left){
             stk.push(cur->left);
         }
+        ll = ll->left;
     }
-    l.printAll();
+    return linkedList->left;
 }
 
 int main(){
     vector<int> arr = {1,2,3,4,5};
     TreeNode* root = buildTree(arr, arr.size());
-    preorder_traversal(root);
+    TreeNode* ans = flatten_to_linked_list(root);
+    while(ans){
+        cout << ans->val << " ";
+        ans = ans->left;
+    }
 }
