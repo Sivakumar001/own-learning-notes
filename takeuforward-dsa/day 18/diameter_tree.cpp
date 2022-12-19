@@ -1,5 +1,5 @@
 #include<bits/stdc++.h>
-#include"binary_tree.cpp"
+#include"../day 17/binary_tree.cpp"
 
 int diameter_tree(TreeNode* n, int& diameter){
     if(n==nullptr){

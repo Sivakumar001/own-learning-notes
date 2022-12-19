@@ -4,7 +4,7 @@ using namespace std;
 
 string count_nd_say(int n){
     if(n==1)return "1";
-    if(n==2)return"11";
+    if(n==2)return "11";
     string ans = "11";
 
     for(int i=3;i<=n;i++){
