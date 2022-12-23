@@ -27,44 +27,44 @@ class Solution{
             return s;
         }
 
-    TreeNode* deserialize(string str)
-    {
-        if(str=="")return nullptr;
-        stringstream s(str);
-        string cur;
-        getline(s, cur, ',');
-
-        TreeNode* root = new TreeNode(stoi(cur));
-        queue<TreeNode*> levelQueue;
-        levelQueue.push(root);
-        while(!levelQueue.empty())
+        TreeNode* deserialize(string str)
         {
-            TreeNode* curNode = levelQueue.front();
-            levelQueue.pop();
+            if(str=="")return nullptr;
+            stringstream s(str);
+            string cur;
+            getline(s, cur, ',');
 
-            // left side
-            getline(s, cur, ',');
-            if(cur=="#"){
-                curNode->left = nullptr;
+            TreeNode* root = new TreeNode(stoi(cur));
+            queue<TreeNode*> levelQueue;
+            levelQueue.push(root);
+            while(!levelQueue.empty())
+            {
+                TreeNode* curNode = levelQueue.front();
+                levelQueue.pop();
+
+                // left side
+                getline(s, cur, ',');
+                if(cur=="#"){
+                    curNode->left = nullptr;
+                }
+                else{
+                    TreeNode* lnode = new TreeNode(stoi(cur));
+                    curNode->left = lnode;
+                    levelQueue.push(lnode);
+                }
+                // right side
+                getline(s, cur, ',');
+                if(cur=="#"){
+                    curNode->right = nullptr;
+                }
+                else{
+                    TreeNode* rnode = new TreeNode(stoi(cur));
+                    curNode->right = rnode;
+                    levelQueue.push(rnode);
+                }
             }
-            else{
-                TreeNode* lnode = new TreeNode(stoi(cur));
-                curNode->left = lnode;
-                levelQueue.push(lnode);
-            }
-            // right side
-            getline(s, cur, ',');
-            if(cur=="#"){
-                curNode->right = nullptr;
-            }
-            else{
-                TreeNode* rnode = new TreeNode(stoi(cur));
-                curNode->right = rnode;
-                levelQueue.push(rnode);
-            }
+            return root;
         }
-        return root;
-    }
 
 };
 

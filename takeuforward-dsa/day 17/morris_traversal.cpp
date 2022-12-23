@@ -1,8 +1,8 @@
 #include<bits/stdc++.h>
-#include"../day 16/binary_tree.cpp"
+#include"binary_tree.cpp"
 
 using namespace std;
-
+// morris traversal for inorder and preorder without recursion or backtracking
 vector<int> getInorder(TreeNode* root){
     vector<int> inorder;
     TreeNode* cur = root;
@@ -22,7 +22,7 @@ vector<int> getInorder(TreeNode* root){
             }
             else{
                 pre->right = nullptr;
-                inorder.push_back(cur->val);
+                inorder.push_back(cur->val);  // the difference here
                 cur = cur->right;
             }
         }

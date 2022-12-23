@@ -1,5 +1,5 @@
 #include<bits/stdc++.h>
-#include"../day 17/binary_tree.cpp"
+#include"binary_tree.cpp"
 
 using namespace std;
 
