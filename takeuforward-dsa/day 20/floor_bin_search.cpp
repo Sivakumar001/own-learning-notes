@@ -1,5 +1,5 @@
 #include<bits/stdc++.h>
-#include"../day 17/binary_tree.cpp"
+#include"bst.cpp"
 
 using namespace std;
 
@@ -22,8 +22,9 @@ int floor_bintree(TreeNode* root, int target){
 }
 
 int main(){
-    vector<int> arr = {8,5,12,4,7,10,14};
+    vector<int> arr = {13,12,17,20,10,9,8,7,3,2,1};
     int target = 11;
-    TreeNode* root = buildTree(arr, arr.size());
-    cout << floor_bintree(root, target);
+    binary_search_tree bst;
+    bst.insert_node(arr);
+    cout << floor_bintree(bst.root, target);
 }

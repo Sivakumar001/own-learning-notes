@@ -57,10 +57,38 @@ vector<int> getPreorder(TreeNode* root){
     return preorder;
 }
 
+
+vector<int> getPostOrder(TreeNode* root){
+    vector<int> postOrder;
+    TreeNode* cur = root;
+    while(cur){
+        if(cur->right==nullptr){        // reverse of preorder
+            postOrder.insert(postOrder.begin(), cur->val);
+            cur = cur->left;
+        }
+        else{
+            TreeNode* pre = cur->right;
+            while(pre->left && pre->left!=cur){
+                pre = pre->left;
+            }
+            if(pre->left==nullptr){
+                pre->left = cur;
+                postOrder.insert(begin(postOrder), cur->val);  // major changes
+                cur = cur->right;
+            }
+            else if(pre->left==cur){
+                pre->left = nullptr;
+                cur = cur->left;
+            }
+        }
+    }
+    return postOrder;
+}
+
 int main(){
     vector<int> arr = {1,2,3,4,5,6,7};
     TreeNode* root = buildTree(arr, arr.size());
-    vector<int> ans = getPreorder(root);
+    vector<int> ans = getPostOrder(root);
     for(auto it: ans){
         cout << it << " ";
     }

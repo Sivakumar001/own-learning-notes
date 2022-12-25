@@ -1,5 +1,5 @@
 #include<bits/stdc++.h>
-#include"../day 17/binary_tree.cpp"
+#include"bst.cpp"
 
 using namespace std;
 
@@ -23,7 +23,8 @@ int ceil_bintree(TreeNode* root, int key){
 
 int main(){
     vector<int> arr = {8,5,12,4,7,10,14};
+    binary_search_tree bst;
+    bst.insert_node(arr);
     int key = 11;
-    TreeNode* root = buildTree(arr, arr.size());
-    cout << ceil_bintree(root, key);
+    cout << ceil_bintree(bst.root, key);
 }

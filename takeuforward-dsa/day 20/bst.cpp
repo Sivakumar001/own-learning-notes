@@ -10,6 +10,7 @@ class binary_search_tree{
             root = nullptr;
         }
 
+
         void insert_node(int value){
             TreeNode* cur = root;
             TreeNode* node = new TreeNode(value);
@@ -36,6 +37,12 @@ class binary_search_tree{
                         break;
                     }
                 }
+            }
+        }
+
+        void insert_node(vector<int> values){
+            for(auto itr: values){
+                insert_node(itr);
             }
         }
 
@@ -98,15 +105,4 @@ void preorder_traversal(TreeNode* root){
         if(cur->left)stk.push(cur->left);
 
     }
-}
-
-int main(){
-    binary_search_tree bst;
-    bst.insert_node(2);
-    bst.insert_node(3);
-    bst.insert_node(1);
-    bst.insert_node(7);
-
-    bst.delete_node(3);
-    preorder_traversal(bst.root);
 }
