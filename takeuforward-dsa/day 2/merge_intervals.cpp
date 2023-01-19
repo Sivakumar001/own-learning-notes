@@ -14,7 +14,7 @@ vector<vector<int>> merge_intervals(vector<vector<int>> &intervals){
     vector<int> tempInterval=intervals[0];
 
     for(auto it: intervals){
-        // 1, tmp[1]3>2it[0] , 6
+        // 1, tmp[1]3> 2, it[0] , 6
         if(tempInterval[1]>=it[0]){
             tempInterval[1]=max(it[1], tempInterval[1]);
         }else{

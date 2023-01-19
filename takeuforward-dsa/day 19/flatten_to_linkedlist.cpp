@@ -4,32 +4,27 @@
 using namespace std;
 
 TreeNode* flatten_to_linked_list(TreeNode* root){
-    stack<TreeNode*> stk;
-    stk.push(root);
-    TreeNode* linkedList= new TreeNode(-1);
-    TreeNode* ll = linkedList;
-    while (!stk.empty())
-    {
-        TreeNode* cur = stk.top();
-        ll->left = cur;
-        stk.pop();
-        if(cur->right){
-            stk.push(cur->right);
+    TreeNode* cur = root;
+    while(cur){
+        if(cur->left!=nullptr){
+            TreeNode* pre = cur->left;
+            while(pre->right){
+                pre = pre->right;
+            }
+            pre->right = cur->right;
+            cur->right = cur->left;
         }
-        if(cur->left){
-            stk.push(cur->left);
-        }
-        ll = ll->left;
+        cur = cur->right;
     }
-    return linkedList->left;
+    return root;
 }
 
 int main(){
-    vector<int> arr = {1,2,3,4,5};
+    vector<int> arr = {12,5,3,6,7,11,34,23,35};
     TreeNode* root = buildTree(arr, arr.size());
     TreeNode* ans = flatten_to_linked_list(root);
     while(ans){
         cout << ans->val << " ";
-        ans = ans->left;
+        ans = ans->right;
     }
 }

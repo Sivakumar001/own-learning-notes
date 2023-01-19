@@ -60,6 +60,5 @@ int main(){
     vector<int> arr = {1,2,3,4,5,6,7,8};
     TreeNode* node = buildTree(arr, arr.size());
 
-    int min_time = 0;
     cout << find_min_time(node);
 }

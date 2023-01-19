@@ -14,12 +14,10 @@ vector<int> job_sequencing(vector<vector<int>> jobs){
     int maxi=0;
 
     for(auto itr: jobs){
-        if(maxi <= itr[1]){
-            maxi = itr[1];
-        }
+        maxi = max(maxi, itr[1]);
     }
 
-    int countjob=0,job_profit=0;
+    int countjob=0, job_profit=0;
     vector<int> arrangement(maxi, -1);
 
     for(int i=0;i<maxi;i++){

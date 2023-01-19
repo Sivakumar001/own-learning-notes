@@ -1,9 +1,10 @@
 #include<bits/stdc++.h>
-#include"../day 16/binary_tree.cpp"
+#include"binary_tree.cpp"
 
 using namespace std;
 
 // This level order traversal works but queue takes extra space compared
+
 // to recursion traversal pre/in/postorder.
 
 vector<int> left_view(TreeNode* root){

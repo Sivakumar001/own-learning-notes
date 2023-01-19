@@ -7,7 +7,6 @@ int max_path_sum(TreeNode* root, int& sum){
     if(root==nullptr){
         return 0;
     }
-
     int left = max(0, max_path_sum(root->left, sum));
     int right = max(0, max_path_sum(root->right, sum));
     sum = max(sum, (root->val+left+right));
